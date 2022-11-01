@@ -13,7 +13,7 @@ if add_radio == "JSON":
     
 @st.cache
 def load_data():
-    if add_radio == "CSV" or :
+    if add_radio == "CSV":
         df = pd.read_csv(file)
     if add_radio == "EXCEL":
         df = pd.read_excel(file)
