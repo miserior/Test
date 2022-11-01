@@ -7,7 +7,6 @@ from streamlit_pandas_profiling import st_profile_report
 
 
 file = st.file_uploader("Seleccione el archivo")
-
 @st.cache
 def load_data():
     data = pd.read_excel(file)
@@ -15,4 +14,4 @@ def load_data():
 df = load_data()
 
 # show data on streamlit
- st.write(df)
+st.write(df)
