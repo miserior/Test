@@ -6,34 +6,13 @@ from streamlit_pandas_profiling import st_profile_report
 
 
 
+file = st.file_uploader("Seleccione el archivo")
 
-with st.sidebar:
-    st.title("Menu principal")
-    try:
-        
-        add_radio = st.radio("Seleccione el formato",("CSV", "EXCEL","JSON"))
-        
-        @st.cache(persist=True)
-        def load_data(add_radio):
-            if add_radio == "CSV":
-                file = st.file_uploader("Seleccione el archivo")
-                df = pd.read_csv(file)
-            if add_radio == "EXCEL":
-                file = st.file_uploader("Seleccione el archivo")
-                df = pd.read_excel(file)
-            if add_radio == "JSON":
-                title = st.text_input("Ingresa la URL aquí 👇")
-                df = pd.read_json(title)
-            return df
-    except:
-        pass
-    interaction = st.button("Calcular")
-    if interaction ==True:
-        df = load_data(add_radio)
+@st.cache
+def load_data():
+    data = pd.read_excel(file)
+    return data
+df = load_data()
 
-st.title("Perfilamiento de datos ")
-try:
-    pr = df.profile_report()
-    st_profile_report(pr)
-except:
-    pass
+# show data on streamlit
+ st.write(df)
