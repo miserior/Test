@@ -6,7 +6,7 @@ from streamlit_pandas_profiling import st_profile_report
 
 
 
-@st.cache(persist=True)
+
 with st.sidebar:
     st.title("Menu principal")
     try:
@@ -25,8 +25,11 @@ with st.sidebar:
         pass
 
 st.title("Perfilamiento de datos ")
-try:
-    pr = df.profile_report()
-    st_profile_report(pr)
-except:
-    pass
+
+@st.cache(persist=True)
+def perfilamiento(df):
+    try:
+        pr = df.profile_report()
+        st_profile_report(pr)
+    except:
+        pass
