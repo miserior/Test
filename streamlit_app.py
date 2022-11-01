@@ -6,7 +6,7 @@ from streamlit_pandas_profiling import st_profile_report
 
 
 
-
+@st.cache(persist=True)
 with st.sidebar:
     st.title("Menu principal")
     try:
