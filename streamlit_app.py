@@ -6,7 +6,7 @@ with st.sidebar:
     st.title("Menu principal")
     add_radio = st.radio("Seleccione el formato",("CSV", "EXCEL","JSON"))
     
-    @st.cache(suppress_st_warning=True)
+    @st.cache(persist=True)
     def load_data():
         if add_radio == "CSV":
             file = st.file_uploader("Seleccione el archivo")
