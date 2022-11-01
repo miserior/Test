@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import pydeck as pdk
 from streamlit_pandas_profiling import st_profile_report
 
 with st.sidebar:
