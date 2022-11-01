@@ -24,7 +24,7 @@ with st.sidebar:
             if add_radio == "JSON":
                 title = st.text_input("Ingresa la URL aquí 👇")
                 df = pd.read_json(title)
-             return df
+            return df
     except:
         pass
 
