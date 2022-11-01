@@ -21,4 +21,5 @@ def load_data():
 
 df = load_data()
 st.title("Perfilamiento de datos ")
-st.write(df)
+pr = df.profile_report()
+st_profile_report(pr)
