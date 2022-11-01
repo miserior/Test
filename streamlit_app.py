@@ -13,9 +13,18 @@ if add_radio == "JSON":
     
 @st.cache
 def load_data():
-    data = pd.read_excel(file)
-    return data
+    if add_radio == "CSV" or :
+        df = pd.read_csv(file)
+    if add_radio == "EXCEL":
+        df = pd.read_excel(file)
+    if add_radio == "JSON":
+        df = pd.read_json(title)
+    return df
 df = load_data()
 
-# show data on streamlit
-st.write(df)
+st.title("Perfilamiento de datos ")
+try:
+    pr = df.profile_report()
+    st_profile_report(pr)
+except:
+    pass
