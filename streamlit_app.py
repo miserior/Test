@@ -21,8 +21,4 @@ def load_data():
 
 df = load_data()
 st.title("Perfilamiento de datos ")
-try:
-    pr = df.profile_report()
-    st_profile_report(pr)
-except:
-    pass
+st.write(df)
