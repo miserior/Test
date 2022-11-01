@@ -25,6 +25,7 @@ with st.sidebar:
                 title = st.text_input("Ingresa la URL aquí 👇")
                 df = pd.read_json(title)
             return df
+        perfilamiento(add_radio)
     except:
         pass
 
